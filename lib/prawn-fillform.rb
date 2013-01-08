@@ -257,7 +257,7 @@ module Prawn
                                     :valign => options[:valign] || :center,
 
                                     # Default to the document font size if the field size is 0
-                                    :size => options[:font_size] || (size = field.font_size) > 0.0 ? size : font_size,
+                                    :size => options[:font_size] || ((size = field.font_size) > 0.0 ? size : font_size),
                                     :style => options[:font_style] || field.font_style
             elsif field.type == :checkbox
               is_yes = (v = value.downcase) == "yes" || v == "1" || v == "true"
